@@ -1,4 +1,3 @@
-// src/components/Header.js
 import styles from '../styles/Header.module.scss';
 
 const Header = () => (
@@ -10,6 +9,8 @@ const Header = () => (
                 <li><a href="#organizers">Organizadores</a></li>
                 <li><a href="#partners">Parceiros</a></li>
                 <li><a href="#support">Apoio</a></li>
+                <li><a href="/registration">Inscrições</a></li>
+                <li><a href="/contact">Contato</a></li>
             </ul>
         </nav>
     </header>
