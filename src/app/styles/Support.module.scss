@@ -1,0 +1,32 @@
+// src/styles/Support.module.scss
+@import './variables';
+@import './mixins';
+
+.support {
+  padding: 40px;
+  background-color: $primary-color;
+  color: white;
+  text-align: left;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  a {
+    display: block;
+    margin-top: 1rem;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import './variables';
+// src/styles/Header.module.scss
+.header {
+  background-color: $primary-color;
+  padding: 20px;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  a {
+    color: white;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}

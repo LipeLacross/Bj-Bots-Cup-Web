@@ -1,0 +1,38 @@
+// src/styles/Partners.module.scss
+@import './variables';
+@import '../mixins';
+
+.partners {
+  padding: 40px;
+  background-color: $accent-color;
+  color: white;
+  text-align: left;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+
+      a {
+        color: white;
+        text-decoration: underline;
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
