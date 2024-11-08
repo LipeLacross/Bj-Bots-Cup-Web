@@ -1,19 +1,252 @@
-@import './variables';
-// src/styles/Header.module.scss
-.header {
-  background-color: $primary-color;
-  padding: 20px;
+@use './variables';
 
-  ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #1F3B73, #2A4CAD);
+  padding: 1.5rem 2.5rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(0);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.4s ease, box-shadow 0.4s ease;
+
+  &.hidden {
+    transform: translateY(-120%);
   }
 
-  a {
-    color: white;
-    &:hover {
-      color: $secondary-color;
+  .logoContainer {
+    display: flex;
+    align-items: center;
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      .logoText {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-left: 1rem;
+        color: #FDA00F;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: color 0.3s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        animation: fadeInLogo 1.5s ease forwards;
+      }
+
+      &:hover .logoText {
+        color: #FFFFFF;
+        transform: scale(1.05) rotate(-3deg);
+      }
     }
+  }
+
+  .menuToggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+
+    .hamburger {
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      position: relative;
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &::before {
+        top: -10px;
+      }
+
+      &::after {
+        bottom: -10px;
+      }
+    }
+
+    .open {
+      .hamburger {
+        transform: rotate(45deg);
+        &::before {
+          transform: rotate(90deg);
+          top: 0;
+        }
+        &::after {
+          transform: rotate(90deg);
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 1rem;
+
+    .logoContainer {
+      .logoText {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.8rem 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .menuToggle {
+      display: block;
+    }
+
+    .nav {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(135deg, #2A4CAD, #1F3B73);
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          padding: 1.2rem 0;
+
+          a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.4s ease, transform 0.4s ease;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 0.5s;
+
+            &:hover {
+              color: #FDA00F;
+              transform: scale(1.1) rotate(2deg);
+            }
+          }
+        }
+      }
+    }
+
+    .open {
+      display: flex;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem 1rem;
+
+    .logoContainer {
+      .logoText {
+        font-size: 1.2rem;
+      }
+    }
+
+    .nav {
+      ul {
+        li {
+          padding: 1rem 0;
+
+          a {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 769px) {
+    .nav {
+      ul {
+        display: flex;
+        gap: 2.5rem;
+
+        li {
+          position: relative;
+
+          a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            padding: 0.5rem 0;
+            transition: color 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
+            opacity: 0;
+            animation: fadeIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation-delay: 0.6s;
+
+            &:hover {
+              color: #FDA00F;
+              transform: translateY(-5px);
+            }
+
+            &::before {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0;
+              height: 3px;
+              background-color: #FDA00F;
+              transition: width 0.5s ease-in-out;
+            }
+
+            &:hover::before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLogo {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

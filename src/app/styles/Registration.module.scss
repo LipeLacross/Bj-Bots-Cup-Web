@@ -1,0 +1,111 @@
+@use './variables';
+
+.registrationPage {
+  background: linear-gradient(135deg, #1F3B73, #2A4CAD);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  padding-top: 120px; /* Espaçamento adicional para garantir que o conteúdo não seja coberto pelo Header */
+}
+
+.mainContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  flex-grow: 1;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #FDA00F;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+
+    @media (max-width: 768px) {
+      font-size: 2.6rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #FFFFFF;
+
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .registrationDetails {
+    margin-top: 3rem;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      color: #FDA00F;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+      @media (max-width: 768px) {
+        font-size: 2.2rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 2rem;
+      }
+    }
+
+    button.subscribeButton {
+      margin-top: 2rem;
+      padding: 1rem 2.5rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #ffffff;
+      background: linear-gradient(90deg, #231E62, #380EAD);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(90deg, #380EAD, #FDA00F);
+        transform: scale(1.1);
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1.2rem;
+        padding: 0.8rem 2rem;
+      }
+    }
+  }
+}
