@@ -1,0 +1,54 @@
+|-- LICENSE
+|-- README.md
+|-- README_EN.md
+|-- ideas.txt
+|-- jsconfig.json
+|-- next.config.mjs
+|-- package-lock.json
+|-- package.json
+|-- public/
+|   |-- file.svg
+|   |-- globe.svg
+|   |-- next.svg
+|   |-- vercel.svg
+|   |-- window.svg
+|-- src/
+|   |-- app/
+|       |-- components/
+|           |-- CallToActionTeachers.js
+|           |-- EventDetails.js
+|           |-- EventHistory.js
+|           |-- Footer.js
+|           |-- Header.js
+|           |-- Hero.js
+|           |-- Organizers.js
+|           |-- Partners.js
+|           |-- Support.js
+|           |-- TeamsList.js
+|       |-- contact/
+|           |-- page.js
+|       |-- registration/
+|           |-- page.js
+|       |-- favicon.ico
+|       |-- fonts/
+|           |-- GeistMonoVF.woff
+|           |-- GeistVF.woff
+|       |-- globals.scss
+|       |-- layout.js
+|       |-- page.js
+|       |-- page.module.css
+|       |-- styles/
+|           |-- CallToActionTeachers.module.scss
+|           |-- Page.module.scss
+|           |-- EventDetails.module.scss
+|           |-- EventHistory.module.scss
+|           |-- Footer.module.scss
+|           |-- Header.module.scss
+|           |-- Hero.module.scss
+|           |-- Organizers.module.scss
+|           |-- Partners.module.scss
+|           |-- Page.module.scss
+|           |-- Support.module.scss
+|           |-- TeamsList.module.scss
+|           |-- mixins.scss
+|           |-- variables.scss
